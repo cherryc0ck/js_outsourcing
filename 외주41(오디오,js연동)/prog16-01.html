@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트로 비디오 제어</title></head>
+<body>
+<h3>자바스크립트로 비디오 제어</h3>
+<hr>
+<video id="video" width="400" height="400" autoplay controls>
+	<source src="media/bear.mp4" type="video/mp4">
+</video>
+
+<div id="msg">이곳에 비디오 제어 메시지 출력</div>
+<button id="play" onclick="control(event)">play</button>
+<button id="pause" onclick="control(event)">pause</button>
+<button id="replay" onclick="control(event)">replay</button>
+<button id="vol-" onclick="control(event)">vol-</button>
+<button id="mute on/off" onclick="control(event)">mute on/off</button>
+
+<script>
+var divEmt = document.getElementById("msg");
+var video = document.getElementById("video");
+
+function control(e) {
+	var id = e.target.id;
+	if(id=="play"){
+		video.play();
+		div.innerHTML = video.src + "비디오 재생";
+	}
+	else if(id == "pause") { 
+        video.pause();
+        div.innerHTML = "일시중지되었습니다.";
+    }
+    else if(id == "replay") { 
+        video.load(); 
+        video.play(); 
+        div.innerHTML = video.src + "를 처음부터 재생합니다.";
+    }
+    else if(id == "vol-") { 
+        video.volume -= 0.1; 
+        if(video.volume < 0.1) video.volume = 0;
+        div.innerHTML = "음량 0.1 감소." + "현재 " + video.volume;
+    }
+    else if(id == "vol+") { 
+        video.volume += 0.1; 
+        if(video.volume > 0.9) video.volume = 1.0;
+        div.innerHTML = "음량 0.1 증가." + "현재 " + video.volume;
+    }
+    else if(id == "mute on/off") { 
+        video.muted = !video.muted;
+        if(video.muted) div.innerHTML = "음소거";
+        else div.innerHTML = "음소거 해제";
+    }
+}
+
+
+// <video><source></video> 구조로 된 경우, 비디도 파일명을 가진 src 찾기
+function getSource(v) {
+	child = v.firstElementChild;	
+	for(i=0; i<v.childElementCount; i++) {
+		if(child.tagName == "SOURCE")
+			return child.src;
+		child = child.nextElementSibling;
+	}
+	return "";
+}
+</script>
+</body>
+</html>

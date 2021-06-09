@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>워커 태스크 만들기</title>
+    <script>
+      var worker = null;
+      function startWorkTask() {
+        // 워커 태스크를 생성하고 calcMultiple.js를 실행하도록 지시
+        worker = new Worker("calcMultiple.js");
+
+        //id가 btn인 버튼을 가져와 선언
+        var btn = document.getElementById("btn");
+
+        //버튼 클릭시 calculate()실행
+        btn.addEventListener("click", () => {
+          calculate();
+        });
+      }
+
+      function calculate() {
+        if (worker == null) {
+          alert("워커 태스크가 만들어지지 않았음");
+          return; // 어떤 문제가 있는 상태
+        }
+        // 입력 받은 점수를 워커 태스크로 보내기
+        var numAndNum = {
+          //입력받은 두 숫자로 구성된 객체
+          num1: document.getElementById("op1").value,
+          num2: document.getElementById("op2").value,
+        };
+        //입력받은 두 숫자로 구성된 객체를 워커 태스크로 전송
+        worker.postMessage(numAndNum);
+
+        // 워커 태스크로부터 결과 수신 대기
+        worker.onmessage = function (e) {
+          //워커 태스크로부터 전달받은 합 출력
+          document.getElementById("result").value = e.data;
+        };
+      }
+    </script>
+  </head>
+  <body onload="startWorkTask()">
+    <h3>곱셈하기</h3>
+    <hr />
+    <form>
+      <input id="op1" type="number" value="0" /> x
+      <input id="op2" type="number" value="0" />
+      <input id="btn" type="button" value="곱하기" />
+      <input id="result" type="text" value="0" />
+    </form>
+  </body>
+</html>
