@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.imgWrap {
+  width: 50%;
+}
+.txtWrap {
+  width: 50%;
+  padding-left: 40px;
+}
+.product__row {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  color: #151515;
+}
+
+.product__row > p {
+  flex-basis: 15%;
+  font-weight: 600;
+}
+
+.product__row > span {
+  padding-left: 60px;
+}
+
+.product__row.sns > span > i {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.product__row.sns > span > i:first-child {
+  color: blue;
+}
+.product__row.sns > span > i:last-child {
+  color: skyblue;
+}
+
+.product__row.color {
+  border-top: 1px solid lightgray;
+}
+
+.product__row.size {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.product__row.color > span,
+.product__row.size > span {
+  flex-basis: 85%;
+}
+
+.product__row.color > span > select,
+.product__row.size > span > select {
+  width: 95%;
+  height: 30px;
+}
+
+.product__row.btn {
+  padding: 20px 20px 0 0;
+}
+
+.product__row.btn button {
+  width: 50%;
+  height: 80px;
+  border: 1px solid lightgray;
+  background: none;
+  font-weight: bold;
+}
+
+.product__row.btn .purchase {
+  margin-right: 20px;
+  background-color: yellow;
+  line-height: 1.5em;
+}
