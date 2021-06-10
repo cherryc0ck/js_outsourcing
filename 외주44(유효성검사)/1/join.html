@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+      <head>
+             <h1>회원가입</h1>
+                <style>
+                      a:link{ color:blue; }
+                      a:visited{ color:blue; }
+                      a:hover{ color:red; }
+         
+                </style>    
+      </head>
+               <title>회원가입</title>
+            <body>
+                  <br>이름: <input type="text" class="name"></br>
+               <form>   
+                  <br>전화번호: <input class="tel" type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"title="###-####-####"> 
+                                      <input type="submit"> 
+                 </br>
+              </form>
+                <br>생년월일: <input type="date"min="1950-01-01"max="2020-01-01" class="birth"></br>
+                <br>아이디: <input type="text" class="id">                                                    </br>
+                <br>비밀번호: <input type="password" class="psw1">                                          </br>
+                <br>비밀번호 확인: <input type="password" class="psw2">                                   </br>
+                <br>집주소: <input type="text" class="address">                                                    </br>
+                <br>이메일: <input type="email" class="email">                                                  </br>
+                <br>성별: <input type="radio" name="gender" class="male">남
+                              <input type="radio" name="gender" class="female">여
+                </br>
+                      <p><a href="file:main.html"> 
+                        <button class="join" type="button">
+                         회원가입
+                      </a>
+                        </button>
+             </body>
+             <script>
+               const join = document.querySelector('.join');
+               join.addEventListener('click', (e)=>{
+                joinCheck(); 
+               });
+
+               function joinCheck(){
+                const name = document.querySelector('.name');
+                const tel = document.querySelector('.tel');
+                const birth = document.querySelector('.birth');
+                const id = document.querySelector('.id');
+                const psw1 = document.querySelector('.psw1');
+                const psw2 = document.querySelector('.psw2');
+                const address = document.querySelector('.address');
+                const email = document.querySelector('.email');
+                const male = document.querySelector('.male');
+                const female = document.querySelector('.female');
+                if(name.value === ''){
+                  alert("이름을 입력해주세요.");
+                }else if(tel.value === ''){
+                  alert("전화번호를 입력해주세요.");
+                }else if(birth.value === ''){
+                  alert("생년월일을 입력해주세요.")
+                }else if(id.value === ''){
+                  alert("아이디를 입력해주세요.");
+                }else if(psw1.value === ''){
+                  alert("비밀번호를 입력해주세요.");
+                }else if(psw2.value === ''){
+                  alert("비밀번호를 입력해주세요.");
+                }else if(psw1.value !== psw2.value){
+                  alert("비밀번호가 맞지않습니다.");
+                }else if(address.value === ''){
+                  alert("주소를 입력해주세요.");
+                }else if(email.value === ''){
+                  alert("이메일을 입력해주세요.");
+                }else if(male.checked === false && female.checked === false){
+                  alert("성별을 체크해주세요.")
+                }
+                
+               }
+             </script>
+</html>

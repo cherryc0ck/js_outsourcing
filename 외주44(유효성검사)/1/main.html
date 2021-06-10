@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+   <head>  
+    <meta charset="UTF-8">
+    <style>
+      body{width:1500px;}
+      h1{color:white; text-align:center;}  
+      h2{color:blue;text-align:center;}  
+      h4{text-align:center;} 
+      #aa{ 
+        margin:5px; padding:10px;
+        color:white; background-color:black;
+        border:10px solid blue; text-align:center; 
+        border-radius: 25px;
+      }
+      aside#right{width:250px; float:left;}
+      
+      #header{width:100%;height:100px;}
+      #content{background-color:white;width:70%;height:500px;float:left;}
+      #log{background-color:white;width:30%;height:140px;float:right;}
+      #footer{clear: both;}
+              
+      a:link{ color:black; }
+      a:visited{ color:black; }
+      a:hover{ color:blue; }
+      a:active{ font-size:101% }
+</style>  
+    </head>
+    <title>  @@@@@    </title>
+    <body>
+             <from action="#"  method="get">
+
+       <dt><div> <div id="header"><h1 id="aa"> @@@@@</h1>   </div> </dt>
+
+       <div id="log">
+       <aside id="right">
+           <fieldset rows="5"cols="50">
+
+              <legend>로그인</legend>
+
+
+                      아이디  <input class="id" type="text" name="tx"placeholder="ID" autofocus> <p> 
+                      비밀번호  <input type="password"placeholder="PW" name="ps" class="psw">
+
+                        <a href="file:main.html"> <button type="button" class="login" >로그인</a></button>
+                         <a href="file:log.html"target="_blank">
+                         <button type="button" onclick="alert('회원가입 창으로 이동합니다!')">회원가입</a></button>
+ 
+            </fieldset> 
+      </aside>
+       
+            <p>         
+                            <img src="skg.jpg" width="450"height="300"></img></a>
+            </p> 
+       </div> 
+
+       <div id="content">
+             <h2> 검색   : <input type="search">    
+
+                <a href= "file:search.html"><input type="button"value="확인"></a> </h2> 
+                             
+           <li><a href="file:content.html" target="_blank"><input type="button"value="@@@@"></li><p>
+           <li><input type="button"value="@@@@">                </li><p>
+           <li><input type="button"value="@@@@">               </li><p>
+           <li><input type="button"value="@@@@">             </li><p>
+           <li><input type="button"value="@@@@">             </li><p>
+           <li><input type="button"value="@@@@"> </li><p>
+           <li><input type="button"value="@@@@"> </li><p>
+           <li><input type="button"value="@@@@">              </li><p>
+                </a>
+       
+
+      </div>
+
+       
+
+    
+  
+      <div id="footer"> 
+           <table border="1">
+             <tr>
+
+            
+                   <td width="300"> <a href="file:tail.html"> <h4>  @@@@             </a>  </h4>      </td>
+                   <td width="300"> <a href="file:tail.html"> <h4>  @@@@          </a>  </h4>      </td> 
+                   <td width="300"> <a href="file:tail.html"><h4> @@@@  </a>  </h4>      </td>
+                   <td width="300"> <a href="file:tail.html"><h4>    @@@@             </a>  </h4>      </td>
+                   <td width="300"> <a href="file:tail.html"> <h4> @@@@           </a>  </h4>      </td>
+
+              </tr>
+           </table>
+       </div>
+
+                                                                                                                                             </div>   
+   
+                                                                                                                                             <hr></hr>
+                     <h5><p>고유번호 : xxx-xxx-xxxxxx / 단체명 :@@@@ / 대표자 : @@@@</p>
+                            <p> TEL. 02-xxx-xxxx FAX. 02-xxx-xxxx 서울 xx구 xx로 xx xx 빌딩 @층 (구. xx동 xxx-xx번지 @층)</p>
+                             이메일: xxxxxxxxxxxx@xxxxx.com 개인정보관리책임자:@@@@  </h5>
+         </body>
+         <script>
+           const loginBtn = document.querySelector('.login');
+            const id = document.querySelector('.id');
+            const psw = document.querySelector('.psw');
+
+            loginBtn.addEventListener('click', ()=>{
+              loginCheck();
+            });
+
+            psw.addEventListener('keydown', (e)=>{
+              if(e.keyCode == 13){
+                loginCheck();
+              }
+            });
+
+            id.addEventListener('keydown', (e)=>{
+              if(e.keyCode == 13){
+                loginCheck();
+              }
+            });
+
+            function loginCheck(){
+              //로그인 실패(아이디나 비번 틀릴경우)
+              if(id.value !== 'admin' || psw.value !== '1234'){
+                alert("아이디나 비밀번호를 다시 확인해주세요.");
+              }
+              //로그인 성공시
+              else {
+                //원하는 주소 입력.
+                location.href='https://www.naver.com';
+              }
+            };
+         </script>
+</html>
