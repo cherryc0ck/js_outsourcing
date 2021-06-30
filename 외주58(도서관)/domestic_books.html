@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta author="DSPlay" />
+  </head>
+  <style>
+    p {
+      margin: 0;
+    }
+  </style>
+  <body class="booklist">
+    <div class="head">국내 도서</div>
+    <ul class="ul"></ul>
+  </body>
+
+  <script type="text/javascript">
+    var info_book = new Object();
+    info_book.book1 = new Array(
+      "국내",
+      "book1.jpg",
+      "컴퓨터와 IT기술 이해[개정판-2판]",
+      "최윤철,임순범,한탁돈",
+      "생능출판사",
+      "27000"
+    );
+    info_book.book3 = new Array(
+      "국내",
+      "book2.jpg",
+      "(알기 쉬운)알고리즘",
+      "양성봉",
+      "생능출판사",
+      "24000"
+    );
+    info_book.book5 = new Array(
+      "국내",
+      "book3.jpg",
+      "선형대수학 Express",
+      "김대수",
+      "생능출판사",
+      "27000"
+    );
+    info_book.book7 = new Array(
+      "국내",
+      "book4.jpg",
+      "루비 프로그래밍 언어",
+      "유하진,김윤경,김진석",
+      "생능출판사",
+      "29000"
+    );
+    info_book.book9 = new Array(
+      "국내",
+      "book5.jpg",
+      "소셜미디어의 이해와 활용",
+      "임순범,신은주",
+      "생능출판사",
+      "21000"
+    );
+    info_book.book11 = new Array(
+      "국내",
+      "book6.jpg",
+      "멀티미디어 배움터 2.0",
+      "최윤철,임순범",
+      "생능출판사",
+      "25000"
+    );
+
+    function alertCountCheck() {
+      var bookCount = prompt("수량을 입력해주세요");
+      if (parseInt(bookCount) > 10) {
+        alert("최대 주문수량은 10개입니다.");
+        alertCountCheck();
+      }
+    }
+
+    for (var key in info_book) {
+      var ul = document.querySelector(".ul");
+      var li = document.createElement("li");
+      var br = document.createElement("br");
+
+      var img = document.createElement("img");
+      img.style.cursor = "pointer";
+      img.addEventListener("click", (event) => {
+        if (confirm("해당 책을 장바구니에 넣겠습니까?") == true) {
+          alertCountCheck();
+        }
+      });
+
+      var title = document.createElement("p");
+      var author = document.createElement("p");
+      var publisher = document.createElement("p");
+      publisher.style.display = "inline-block";
+      var price = document.createElement("span");
+
+      img.setAttribute("src", `./images/${info_book[key][1]}`);
+      title.innerHTML = `${info_book[key][2]}`;
+      author.innerHTML = `${info_book[key][3]}`;
+      publisher.innerHTML = `${info_book[key][4]} |`;
+      price.innerHTML = ` ${info_book[key][5]}원`;
+
+      ul.appendChild(li);
+      li.appendChild(img);
+      ul.appendChild(br);
+      li.appendChild(title);
+      li.appendChild(author);
+      li.appendChild(publisher);
+      li.appendChild(price);
+    }
+  </script>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta author="DSPlay" />
+</head>
+<style>
+  p {
+    margin: 0;
+  }
+</style>
+<body class="booklist">
+  <div class="head">국외 도서</div>
+  <ul class="ul"></ul>
+</body>
+<script>
+  var info_book = new Object();
+
+  info_book.book2 = new Array(
+    "국외",
+    "book7.jpg",
+    "네트워크 보안 에센셜(4판)",
+    "William Stallings",
+    "이재광, 전태일",
+    "생능출판사 ",
+    "30000"
+  );
+  info_book.book4 = new Array(
+    "국외",
+    "book8.jpg",
+    "비즈니스 정보 시스템",
+    "P. Baltzan &amp; A. Phillips",
+    "고석하 외",
+    "생능출판사",
+    "28000"
+  );
+  info_book.book6 = new Array(
+    "국외",
+    "book9.jpg",
+    "회로이론",
+    "Mitchel E. Schultz",
+    "김경화, 정성순 외",
+    "생능출판사",
+    "35000"
+  );
+  info_book.book8 = new Array(
+    "국외",
+    "book10.jpg",
+    "Big Java",
+    "Cay Horstmann",
+    "오세만 외",
+    "생능출판사",
+    "32000"
+  );
+  info_book.book10 = new Array(
+    "국외",
+    "book11.jpg",
+    "경영학의 이해 (9/e)",
+    "Nickels, McHugh, McHugh",
+    "권구혁 외",
+    "생능출판사",
+    "30000"
+  );
+  info_book.book12 = new Array(
+    "국외",
+    "book12.jpg",
+    "컴퓨터 배움터",
+    "Greg Anderson 외",
+    "나연묵 외",
+    "생능출판사",
+    "27000"
+  );
+
+  function alertCountCheck() {
+    var bookCount = prompt("수량을 입력해주세요");
+    if (parseInt(bookCount) > 10) {
+      alert("최대 주문수량은 10개입니다.");
+      alertCountCheck();
+    }
+  }
+
+  for (var key in info_book) {
+    var ul = document.querySelector(".ul");
+    var li = document.createElement("li");
+    var br = document.createElement("br");
+
+    var img = document.createElement("img");
+    img.style.cursor = "pointer";
+    img.addEventListener("click", (event) => {
+      if (confirm("해당 책을 장바구니에 넣겠습니까?") == true) {
+        alertCountCheck();
+      }
+    });
+
+    var title = document.createElement("p");
+    var author = document.createElement("p");
+    var publisher = document.createElement("p");
+    publisher.style.display = "inline-block";
+    var price = document.createElement("span");
+
+    img.setAttribute("src", `./images/${info_book[key][1]}`);
+    title.innerHTML = `${info_book[key][2]}`;
+    author.innerHTML = `${info_book[key][3]}`;
+    publisher.innerHTML = `${info_book[key][4]} |`;
+    price.innerHTML = ` ${info_book[key][5]}원`;
+
+    ul.appendChild(li);
+    li.appendChild(img);
+    ul.appendChild(br);
+    li.appendChild(title);
+    li.appendChild(author);
+    li.appendChild(publisher);
+    li.appendChild(price);
+  }
+</script>

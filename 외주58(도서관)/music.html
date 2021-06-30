@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta author="DSPlay" />
+  </head>
+  <style>
+    p {
+      margin: 0;
+    }
+    .hide {
+      display: none;
+    }
+    button {
+      width: 65px;
+      height: 55px;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  </style>
+  <body class="booklist musiclist aerialview">
+    <div class="head">음반/DVD</div>
+    <ul class="ul"></ul>
+  </body>
+  <script type="text/javascript">
+    var info_music = new Object();
+    info_music.music1 = new Array(
+      "음반",
+      "music1.jpg",
+      "Roolin'",
+      "mini4집",
+      "브레이브걸스",
+      "용감한형제, 차쿤",
+      "용감한형제, 투챔프, 차쿤",
+      "https://www.youtube.com/watch?v=nw6mcjNlh8E"
+    );
+    info_music.music2 = new Array(
+      "음반",
+      "music2.jpg",
+      "삐삐",
+      "싱글",
+      "아이유",
+      "아이유",
+      "이종훈",
+      "https://www.youtube.com/watch?v=nM0xDI5R50E"
+    );
+    info_music.music3 = new Array(
+      "음반",
+      "music3.jpg",
+      "운전만해",
+      "싱글",
+      "브레이브걸스",
+      "용감한형제,Maboos",
+      "용감한형제,Maboos,JS,투챔프",
+      "https://www.youtube.com/watch?v=4HjcypoChfQ"
+    );
+    info_music.music4 = new Array(
+      "음반",
+      "music4.jpg",
+      "야생화",
+      "야생화",
+      "박효신",
+      "박효신,김지향",
+      "박효신,정재일",
+      "https://www.youtube.com/watch?v=OxgiiyLp5pk"
+    );
+    info_music.music5 = new Array(
+      "음반",
+      "music5.jpg",
+      "내사람",
+      "3집",
+      "SG워너비",
+      "안영민",
+      "조영수",
+      "https://www.youtube.com/watch?v=waRLFDHPGew"
+    );
+
+    for (var key in info_music) {
+      var ul = document.querySelector(".ul");
+      var li = document.createElement("li");
+      var br = document.createElement("br");
+
+      var img = document.createElement("img");
+      img.setAttribute("src", `./images/${info_music[key][1]}`);
+      img.style.width = "400px";
+      img.style.height = "400px";
+
+      var btn = document.createElement("button");
+      btn.setAttribute("id", `${key}`);
+      btn.addEventListener("click", (e) => {
+        showInfo(e);
+      });
+
+      var div = document.createElement("div");
+      div.classList.add("hide");
+      div.classList.add(`${key}`);
+
+      var song = document.createElement("span");
+      var title = document.createElement("span");
+      var singer = document.createElement("span");
+      var author1 = document.createElement("p");
+      var author2 = document.createElement("p");
+
+      song.innerHTML = `${info_music[key][2]} - `;
+      title.innerHTML = `${info_music[key][3]}`;
+      singer.innerHTML = `${info_music[key][4]} `;
+      author1.innerHTML = ` 작사 : ${info_music[key][5]}`;
+      author2.innerHTML = ` 작곡 : ${info_music[key][6]}`;
+
+      ul.appendChild(li);
+      li.appendChild(img);
+      li.appendChild(br);
+      li.appendChild(btn);
+      btn.innerHTML =
+        '<img src="./images/playBtn.png" width="100%" height="100%"/>';
+      li.appendChild(div);
+      div.appendChild(song);
+      div.appendChild(title);
+      div.appendChild(singer);
+      div.appendChild(author1);
+      div.appendChild(author2);
+    }
+
+    function showInfo(e) {
+      switch (e.target.parentNode.id) {
+        case "music1":
+          var showDiv = document.querySelector(".music1");
+          showDiv.classList.toggle("hide");
+          var link = window.open(`${info_music.music1[7]}`, "_blank");
+          return;
+
+        case "music2":
+          var showDiv = document.querySelector(".music2");
+          showDiv.classList.toggle("hide");
+          var link = window.open(`${info_music.music2[7]}`, "_blank");
+          return;
+
+        case "music3":
+          var showDiv = document.querySelector(".music3");
+          showDiv.classList.toggle("hide");
+          var link = window.open(`${info_music.music3[7]}`, "_blank");
+          return;
+
+        case "music4":
+          var showDiv = document.querySelector(".music4");
+          showDiv.classList.toggle("hide");
+          var link = window.open(`${info_music.music4[7]}`, "_blank");
+          return;
+
+        case "music5":
+          var showDiv = document.querySelector(".music5");
+          showDiv.classList.toggle("hide");
+          var link = window.open(`${info_music.music5[7]}`, "_blank");
+          return;
+      }
+    }
+  </script>
+</html>

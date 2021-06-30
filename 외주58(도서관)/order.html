@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta author="DSPlay" />
+</head>
+<style>
+  .final {
+    background-color: #189cc4;
+    color: #fff;
+    font-size: 18px;
+  }
+</style>
+<body id="order">
+  <div class="head">서적 주문 양식</div>
+  <form action="">
+    <p>주문서</p>
+    <table>
+      <tr>
+        <th>책 제목</th>
+        <th>가격</th>
+        <th>수량</th>
+        <th>합계</th>
+      </tr>
+      <tr>
+        <td>컴퓨터와 IT기술의 이해 [개정판-2판]</td>
+        <td>27,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(27000, 1,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="one" /> 원</td>
+      </tr>
+      <tr>
+        <td>(알기 쉬운)알고리즘</td>
+        <td>24,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(24000, 2,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="two" /> 원</td>
+      </tr>
+      <tr>
+        <td>선형대수학 Express</td>
+        <td>27,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(27000, 3,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="three" /> 원</td>
+      </tr>
+      <tr>
+        <td>루비 프로그래밍 언어</td>
+        <td>29,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(29000, 4,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="four" /> 원</td>
+      </tr>
+      <tr>
+        <td>소셜미디어의 이해와 활용</td>
+        <td>21,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(21000, 5,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="five" /> 원</td>
+      </tr>
+      <tr>
+        <td>멀티미디어 배움터 2.0</td>
+        <td>25,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(25000, 6,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="six" /> 원</td>
+      </tr>
+      <tr>
+        <td>네트워크 보안 에센셜(4판)</td>
+        <td>30,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(30000, 7,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="seven" /> 원</td>
+      </tr>
+      <tr>
+        <td>비즈니스 정보 시스템</td>
+        <td>28,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(28000, 8,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="eight" /> 원</td>
+      </tr>
+      <tr>
+        <td>회로이론</td>
+        <td>35,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(35000, 9,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="nine" /> 원</td>
+      </tr>
+      <tr>
+        <td>Big Java</td>
+        <td>32,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(32000, 10,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="ten" /> 원</td>
+      </tr>
+      <tr>
+        <td>경영학의 이해 (9/e)</td>
+        <td>30,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(30000, 11,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="eleven" /> 원</td>
+      </tr>
+      <tr>
+        <td>컴퓨터 배움터</td>
+        <td>27,000원</td>
+        <td>
+          <input
+            type="number"
+            size="2"
+            value="0"
+            min="0"
+            max="10"
+            onkeyup="calculate(27000, 12,this.value);"
+          />
+        </td>
+        <td><input type="text" size="6" value="0" id="twelve" /> 원</td>
+      </tr>
+    </table>
+    <br />
+    <p class="final">최종 금액</p>
+    <p class="final_price"></p>
+    <input class="clear" type="button" value="초기화" />
+    <input class="price" type="button" value="총 주문금액" />
+    <input class="order" type="button" value="주문하기" />
+  </form>
+</body>
+
+<script>
+  var sum = document.querySelectorAll("input[type=text]");
+  var count = document.querySelectorAll("input[type=number]");
+
+  var clearBtn = document.querySelector(".clear");
+  var orderBtn = document.querySelector(".order");
+  var priceBtn = document.querySelector(".price");
+  var finalPrice = document.querySelector(".final_price");
+  clearBtn.addEventListener("click", () => {
+    clear();
+  });
+
+  priceBtn.addEventListener("click", () => {
+    order();
+  });
+
+  function clear() {
+    sum.forEach((result) => {
+      result.value = 0;
+    });
+    count.forEach((result) => {
+      result.value = 0;
+    });
+  }
+
+  function order() {
+    let orderSum = 0;
+    sum.forEach((result) => {
+      orderSum += parseInt(result.value);
+    });
+    finalPrice.innerHTML = `${orderSum}원`;
+  }
+
+  function calculate(price, idx, count) {
+    if (count > 10) {
+      alert("수량은 10개까지 가능합니다.");
+      event.target.value = 0;
+      idx = 0;
+      sum.forEach((result) => {
+        result.value = 0;
+      });
+    }
+    switch (idx) {
+      case 1:
+        var one = document.querySelector("#one");
+        one.value = price * count;
+        break;
+      case 2:
+        var two = document.querySelector("#two");
+        two.value = price * count;
+        break;
+      case 3:
+        var three = document.querySelector("#three");
+        three.value = price * count;
+        break;
+      case 4:
+        var four = document.querySelector("#four");
+        four.value = price * count;
+        break;
+      case 5:
+        var five = document.querySelector("#five");
+        five.value = price * count;
+        break;
+      case 6:
+        var six = document.querySelector("#six");
+        six.value = price * count;
+        break;
+      case 7:
+        var seven = document.querySelector("#seven");
+        seven.value = price * count;
+        break;
+      case 8:
+        var eight = document.querySelector("#eight");
+        eight.value = price * count;
+        break;
+      case 9:
+        var nine = document.querySelector("#nine");
+        nine.value = price * count;
+        break;
+      case 10:
+        var ten = document.querySelector("#ten");
+        ten.value = price * count;
+        break;
+      case 11:
+        var eleven = document.querySelector("#eleven");
+        eleven.value = price * count;
+        break;
+      case 12:
+        var twelve = document.querySelector("#twelve");
+        twelve.value = price * count;
+        break;
+    }
+  }
+</script>

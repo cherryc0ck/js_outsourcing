@@ -1,0 +1,5 @@
+"음반","music1.jpg","Roolin'","mini4집","브레이브걸스","용감한형제, 차쿤","용감한형제, 투챔프, 차쿤","https://www.youtube.com/watch?v=nw6mcjNlh8E"
+"음반","music2.jpg","삐삐","싱글","아이유","아이유","이종훈","https://www.youtube.com/watch?v=nM0xDI5R50E"
+"음반","music3.jpg","운전만해","싱글","브레이브걸스","용감한형제,Maboos","용감한형제,Maboos,JS,투챔프","https://www.youtube.com/watch?v=4HjcypoChfQ"
+"음반","music4.jpg","야생화","야생화","박효신","박효신,김지향","박효신,정재일","https://www.youtube.com/watch?v=OxgiiyLp5pk"
+"음반","music5.jpg","내사람","3집","SG워너비","안영민","조영수","https://www.youtube.com/watch?v=waRLFDHPGew"
